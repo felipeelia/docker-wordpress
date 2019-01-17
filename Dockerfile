@@ -1,4 +1,4 @@
-FROM wordpress:php7.3-apache
+FROM wordpress:php5.6-apache
 
 # Install the PHP extensions we need
 RUN set -ex; \
@@ -7,7 +7,7 @@ RUN set -ex; \
 	apt-get install -y \
 		mysql-client \
 		sudo \
-		libzip-dev \
+		zlib1g-dev \
 	; \
 	apt-get install -y \
 		--no-install-recommends ssl-cert \
@@ -16,7 +16,7 @@ RUN set -ex; \
 	a2enmod ssl; \
 	a2ensite default-ssl; \
 	docker-php-ext-install zip; \
-	yes | pecl install xdebug-2.7.0beta1
+	yes | pecl install xdebug
 
 # Install wp-cli, and allow it to regenerate .htaccess files
 # Use /usr/local/bin/wp-cli.phar to run it as root
