@@ -7,7 +7,7 @@ RUN set -ex; \
 	apt-get install -y \
 		mysql-client \
 		sudo \
-		zlib1g-dev \
+		libzip-dev \
 	; \
 	apt-get install -y \
 		--no-install-recommends ssl-cert \
