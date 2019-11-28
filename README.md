@@ -8,6 +8,7 @@ To use MailHog you need to add this to php.ini
 
 `sendmail_path='/usr/bin/mhsendmail --smtp-addr="mailhog:1025"'`
 
+
 It is possible mapping a volume to an additional .ini file. Example:
 
 `- ./dev.ini:/usr/local/etc/php/conf.d/dev.ini`
