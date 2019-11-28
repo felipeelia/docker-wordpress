@@ -5,9 +5,9 @@ RUN set -ex; \
 	\
 	apt-get update; \
 	apt-get install -y \
-		mysql-client \
+		libzip-dev \
+		mariadb-client \
 		sudo \
-		zlib1g-dev \
 	; \
 	apt-get install -y \
 		--no-install-recommends ssl-cert \
@@ -28,6 +28,10 @@ RUN	curl -o /usr/local/bin/wp-cli.phar https://raw.githubusercontent.com/wp-cli/
 		echo 'apache_modules:'; \
 		echo '  - mod_rewrite'; \
 	} > /var/www/wp-cli.yml
+
+# Install MailHog's mhsendmail
+RUN curl -Lo /usr/bin/mhsendmail https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64; \
+	chmod a+x /usr/bin/mhsendmail;
 
 WORKDIR /var/www/html
 VOLUME /var/www/html
