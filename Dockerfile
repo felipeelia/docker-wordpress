@@ -5,9 +5,11 @@ RUN set -ex; \
 	\
 	apt-get update; \
 	apt-get install -y \
+		git \
 		libzip-dev \
 		mariadb-client \
 		sudo \
+		svn \
 	; \
 	apt-get install -y \
 		--no-install-recommends ssl-cert \
