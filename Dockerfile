@@ -9,7 +9,7 @@ RUN set -ex; \
 		libzip-dev \
 		mariadb-client \
 		sudo \
-		svn \
+		subversion \
 	; \
 	apt-get install -y \
 		--no-install-recommends ssl-cert \
